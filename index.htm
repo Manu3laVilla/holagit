@@ -1,0 +1,169 @@
+<html>
+
+	<head>
+		<style>
+
+		body{
+				background-color: #F5C0AB;
+			}
+		
+		#Tablero div > div {
+			width: 60px; 
+			height: 60px; 
+			border-color: #614939; 
+			border-style: solid;
+			display: table-cell;
+			border-width: 1px;
+			font-size: 40px;
+			vertical-align:middle;
+			text-align: center;
+			}
+
+			#Tablero div:nth-child(odd) > div:nth-child(odd){
+				background-color: #926250;
+			}
+			#Tablero div:nth-child(even) > div:nth-child(even){
+				background-color: #926250;
+			}
+
+			#Tablero div > div:hover{
+				transform: scale(1.5);
+				background-color: #F1F1F1;
+			}
+
+			#Tablero div:nth-child(odd) > div:nth-child(odd):hover{
+				background-color: #F1F1F1;
+			}
+			#Tablero div:nth-child(even) > div:nth-child(even):hover{
+				background-color: #F1F1F1;
+			}
+			
+	</style>	
+
+	<script type="text/javascript">
+
+		var seleccionado = false;
+		var ficha;
+		
+		function manejarEvento(ev){
+
+			console.log( ev.target.innerText );
+			console.log(ficha);
+			console.log(seleccionado);
+
+			if(seleccionado){
+				ev.target.innerText = ficha.innerText;
+				ficha.innerText = " ";
+				seleccionado = false;
+				ficha.style.backgroundColor= "orange";
+				if(seleccionado && ficha.innerText!=" "){
+					var negras = document.getElementById("Negras");
+					negras.innerText = ficha.innerText;
+				}
+			}else{
+				seleccionado=true;
+				ficha = ev.target;
+			}
+
+			
+		}
+
+	</script>
+
+	</head>
+
+	<body>
+		
+		<div id="Blancas"></div>
+
+			<div id="Tablero" onclick="manejarEvento(event)">
+
+				<div class="Contenedor">
+					<div>&#9814</div>
+					<div> &#9816</div>
+					<div>&#9815</div>
+					<div>&#9812</div>
+					<div>&#9813</div>
+					<div>&#9815</div>
+					<div>&#9816</div>
+					<div>&#9814</div>
+				</div>
+				<div class="Contenedor">
+					<div>&#9817</div>
+					<div>&#9817</div>
+					<div>&#9817</div>
+					<div>&#9817</div>
+					<div>&#9817</div>
+					<div>&#9817</div>
+					<div>&#9817</div>
+					<div>&#9817</div>
+				</div>
+				<div class="Contenedor">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="Contenedor">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="Contenedor">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="Contenedor">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="Contenedor" >
+					<div>&#9823</div>
+					<div>&#9823</div>
+					<div>&#9823</div>
+					<div>&#9823</div>
+					<div>&#9823</div>
+					<div>&#9823</div>
+					<div>&#9823</div>
+					<div>&#9823</div>
+				</div>
+				<div class="Contenedor" >
+					<div>&#9820</div>
+					<div>&#9822</div>
+					<div>&#9821</div>
+					<div>&#9818</div>
+					<div>&#9819</div>
+					<div>&#9821</div>
+					<div>&#9822</div>
+					<div>&#9820</div>
+			
+				</div>
+
+			</div>
+
+		<div id="Negras"></div>	
+
+	</body>
+
+</html>
